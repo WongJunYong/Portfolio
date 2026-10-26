@@ -1,6 +1,6 @@
 /* ==========================================================================
    WONG JUN YONG — ARCHITECTURAL CANVA PORTFOLIO & CV SHOWCASE
-   Ultra-Responsive: Flawless on Desktop, Tablet & Mobile Phone (320px–480px)
+   Exact Desktop Aesthetic Preserved on All Devices (Desktop, Tablet & Mobile)
    ========================================================================== */
 
 :root {
@@ -59,20 +59,20 @@ img {
 }
 
 /* ==========================================================================
-   TOP NAVIGATION (CLEAN PILL ON DESKTOP, COMPACT ON PHONE)
+   TOP NAVIGATION
    ========================================================================== */
 .minimal-top-nav {
   position: fixed;
-  top: 24px;
-  left: 56px;
+  top: 20px;
+  left: 36px;
   z-index: 150;
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 0.5rem 1.25rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
@@ -103,7 +103,7 @@ img {
 
 .minimal-top-nav a.nav-brand-pill span.nav-asterisk {
   color: var(--accent-bronze);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .minimal-top-nav a.nav-cv-pill {
@@ -122,32 +122,34 @@ img {
 }
 
 /* ==========================================================================
-   SLIDE 1: LANDING HERO (DESKTOP: 3 COLUMNS | MOBILE: STACKED & PUNCHY)
+   SLIDE 1: LANDING HERO (DESKTOP & MOBILE SHARE THE SAME 3-COLUMN SPLIT)
+   Proportions: [Left 51%] [Center-Right 41%] [Far-Right 8%]
    ========================================================================== */
 .hero-slide {
   min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 52% 39% 9%;
+  grid-template-columns: 51% 41% 8%;
   background-color: var(--bg-white);
   border-bottom: 1px solid var(--border-light);
   overflow: hidden;
 }
 
-/* LEFT COLUMN: Asterisk + Giant Condensed Title + Bio + Actions + Tagline */
+/* LEFT COLUMN: Asterisk + Title + Bio + Actions + Tagline */
 .hero-left {
-  padding: 6.5rem 3.5rem 3.5rem 5.5rem;
+  padding: 5.5rem 2.5rem 3rem 4.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   background-color: var(--bg-white);
+  overflow: hidden;
 }
 
 .hero-main-block {
   margin-top: auto;
   margin-bottom: auto;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   width: 100%;
 }
 
@@ -160,18 +162,18 @@ img {
 
 .bronze-asterisk {
   font-family: var(--font-condensed);
-  font-size: 3.6rem;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
   line-height: 1;
   color: var(--accent-bronze);
   position: absolute;
-  left: -3rem;
-  top: 0.35rem;
+  left: -2.75rem;
+  top: 0.2rem;
   user-select: none;
 }
 
 .giant-condensed-title {
   font-family: var(--font-condensed);
-  font-size: clamp(3.8rem, 6.8vw, 6.8rem);
+  font-size: clamp(2.6rem, 6.2vw, 6.8rem);
   line-height: 0.94;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -181,9 +183,9 @@ img {
 }
 
 .hero-description {
-  margin-top: 2.25rem;
-  font-size: 0.95rem;
-  line-height: 1.75;
+  margin-top: 1.75rem;
+  font-size: clamp(0.78rem, 1.4vw, 0.95rem);
+  line-height: 1.7;
   color: var(--text-body);
   max-width: 460px;
   font-weight: 400;
@@ -191,55 +193,55 @@ img {
 
 /* Action Row */
 .hero-cta-row {
-  margin-top: 2.5rem;
+  margin-top: 1.85rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .btn-canva-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.65rem;
   background-color: var(--text-black);
   color: var(--bg-white);
-  padding: 0.95rem 1.65rem;
-  font-size: 0.88rem;
+  padding: 0.75rem 1.35rem;
+  font-size: clamp(0.74rem, 1.2vw, 0.88rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   transition: all 0.25s ease;
-  min-height: 48px;
+  white-space: nowrap;
 }
 
 .btn-canva-primary:hover {
   background-color: var(--accent-bronze);
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 .link-read-more {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.92rem;
+  gap: 0.75rem;
+  font-size: clamp(0.76rem, 1.2vw, 0.92rem);
   font-weight: 700;
   color: var(--text-black);
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   transition: gap 0.2s ease, color 0.2s ease;
-  min-height: 44px;
+  white-space: nowrap;
 }
 
 .link-read-more:hover {
-  gap: 1.4rem;
+  gap: 1.1rem;
   color: var(--accent-bronze);
 }
 
 .hero-bottom-role {
-  font-size: 0.85rem;
+  font-size: clamp(0.68rem, 1.1vw, 0.85rem);
   font-weight: 400;
   color: var(--text-muted);
   letter-spacing: 0.01em;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   line-height: 1.5;
 }
 
@@ -251,7 +253,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.25rem 2rem;
+  padding: 4.5rem 1.5rem 2rem 1.5rem;
   overflow: hidden;
   border-left: 1px solid var(--border-light);
   border-right: 1px solid var(--border-light);
@@ -278,17 +280,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
 }
 
 .cv-col-label {
-  font-size: 0.72rem;
+  font-size: clamp(0.62rem, 1vw, 0.72rem);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #D4D4D8;
+  white-space: nowrap;
 }
 
 .cv-page-tabs {
@@ -296,17 +299,17 @@ img {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.2rem;
   border-radius: 6px;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .cv-tab-btn {
-  padding: 0.35rem 0.8rem;
-  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  font-size: clamp(0.6rem, 0.95vw, 0.72rem);
   font-weight: 700;
   color: #A1A1AA;
   border-radius: 4px;
   transition: all 0.2s ease;
-  min-height: 32px;
+  white-space: nowrap;
 }
 
 .cv-tab-btn.active {
@@ -314,14 +317,14 @@ img {
   color: var(--text-black);
 }
 
-/* The Floating Resume Paper Sheet */
+/* Floating Resume Paper Sheet inside Center-Right Column */
 .cv-paper-showcase {
   margin: auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 0;
+  padding: 0.85rem 0;
   cursor: zoom-in;
 }
 
@@ -329,7 +332,7 @@ img {
   width: 100%;
   max-width: 380px;
   max-height: 58vh;
-  min-height: 280px;
+  min-height: 240px;
   background: #FFFFFF;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
@@ -339,7 +342,7 @@ img {
 }
 
 .cv-paper-frame:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-3px) scale(1.01);
 }
 
 .cv-paper-frame img {
@@ -352,25 +355,25 @@ img {
 .cv-col-footer {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
-  gap: 0.75rem;
-  padding-top: 1rem;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .btn-cv-download-solid {
   background-color: var(--bg-white);
   color: var(--text-black);
-  padding: 0.85rem 1.1rem;
-  font-size: 0.82rem;
+  padding: 0.7rem 0.85rem;
+  font-size: clamp(0.65rem, 1vw, 0.82rem);
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   transition: all 0.2s ease;
-  min-height: 46px;
+  white-space: nowrap;
 }
 
 .btn-cv-download-solid:hover {
@@ -381,24 +384,24 @@ img {
 .btn-cv-zoom-outline {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
-  padding: 0.85rem 0.85rem;
-  font-size: 0.78rem;
+  padding: 0.7rem 0.65rem;
+  font-size: clamp(0.62rem, 0.95vw, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
   transition: all 0.2s ease;
-  min-height: 46px;
+  white-space: nowrap;
 }
 
 .btn-cv-zoom-outline:hover {
   background-color: rgba(255, 255, 255, 0.14);
 }
 
-/* FAR-RIGHT COLUMN: '20 | 26' Vertical Timeline Rail */
+/* FAR-RIGHT COLUMN: '20 | 26' Vertical Timeline Rail (Preserved on All Devices) */
 .hero-right-rail {
   display: flex;
   flex-direction: column;
@@ -410,7 +413,7 @@ img {
 }
 
 .rail-year-num {
-  font-size: 0.82rem;
+  font-size: clamp(0.65rem, 1.1vw, 0.82rem);
   font-weight: 600;
   color: var(--text-black);
   letter-spacing: 0.04em;
@@ -418,9 +421,9 @@ img {
 
 .rail-line-track {
   width: 2px;
-  height: 260px;
+  height: clamp(140px, 35vh, 260px);
   background-color: #D4D4D8;
-  margin: 1.25rem 0;
+  margin: 1rem 0;
   position: relative;
 }
 
@@ -437,7 +440,7 @@ img {
    PORTFOLIO SLIDES BELOW THE FOLD
    ========================================================================== */
 .portfolio-slide {
-  padding: 5.5rem 5.5rem;
+  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 5.5rem);
   border-bottom: 1px solid var(--border-light);
   position: relative;
   width: 100%;
@@ -453,7 +456,7 @@ img {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .slide-title-wrap {
@@ -462,23 +465,23 @@ img {
 
 .slide-asterisk {
   font-family: var(--font-condensed);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   color: var(--accent-bronze);
   position: absolute;
-  left: -2.25rem;
+  left: -2rem;
   top: 0.1rem;
 }
 
 .slide-condensed-title {
   font-family: var(--font-condensed);
-  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   line-height: 1;
   text-transform: uppercase;
   color: var(--text-black);
 }
 
 .slide-subtitle {
-  font-size: 0.92rem;
+  font-size: clamp(0.82rem, 1.2vw, 0.92rem);
   color: var(--text-muted);
   max-width: 480px;
   line-height: 1.6;
@@ -490,13 +493,13 @@ img {
 .canva-filter-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
 .canva-filter-btn {
-  padding: 0.55rem 1.15rem;
-  font-size: 0.78rem;
+  padding: 0.45rem 1rem;
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -504,7 +507,7 @@ img {
   background: var(--bg-white);
   color: var(--text-muted);
   transition: all 0.2s ease;
-  min-height: 40px;
+  min-height: 38px;
   white-space: nowrap;
 }
 
@@ -521,14 +524,14 @@ img {
 
 .certificates-canva-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.35rem;
 }
 
 .cert-canva-card {
   background: var(--bg-white);
   border: 1px solid var(--border-light);
-  padding: 1rem;
+  padding: 0.85rem;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -538,7 +541,7 @@ img {
 }
 
 .cert-canva-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12);
   border-color: var(--text-black);
 }
@@ -547,7 +550,7 @@ img {
   aspect-ratio: 1 / 1.38;
   overflow: hidden;
   background: var(--bg-soft);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
@@ -565,7 +568,7 @@ img {
 }
 
 .cert-tag {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -575,19 +578,19 @@ img {
 }
 
 .cert-name {
-  font-size: 0.94rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.94rem);
   font-weight: 700;
   line-height: 1.3;
   color: var(--text-black);
 }
 
 /* ==========================================================================
-   SLIDE 3: SELECTED PROJECTS
+   SLIDE 3: SELECTED PROJECTS (CANVA 2-COLUMN SPLIT PANEL)
    ========================================================================== */
 .projects-canva-stack {
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  gap: 2.5rem;
 }
 
 .project-canva-panel {
@@ -598,7 +601,7 @@ img {
 }
 
 .project-left-head {
-  padding: 2.75rem 2.25rem;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
   background: var(--bg-dark-panel);
   color: var(--bg-white);
   display: flex;
@@ -608,21 +611,21 @@ img {
 
 .project-index-num {
   font-family: var(--font-condensed);
-  font-size: 3.25rem;
+  font-size: clamp(2.4rem, 4vw, 3.25rem);
   line-height: 1;
   color: var(--accent-bronze);
 }
 
 .project-panel-title {
   font-family: var(--font-condensed);
-  font-size: 2.2rem;
+  font-size: clamp(1.75rem, 2.8vw, 2.2rem);
   line-height: 1.05;
   text-transform: uppercase;
-  margin-top: 0.75rem;
+  margin-top: 0.65rem;
 }
 
 .project-panel-sub {
-  font-size: 0.84rem;
+  font-size: clamp(0.76rem, 1.1vw, 0.84rem);
   color: #A1A1AA;
   margin-top: 0.5rem;
   line-height: 1.5;
@@ -631,43 +634,43 @@ img {
 .project-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1.75rem;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
 }
 
 .project-tech-list span {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  padding: 0.3rem 0.65rem;
+  padding: 0.25rem 0.55rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #E4E4E7;
 }
 
 .project-right-body {
-  padding: 2.75rem 2.5rem;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .kpi-minimal-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
 }
 
 .kpi-minimal-item .big-num {
   font-family: var(--font-condensed);
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   line-height: 1;
   color: var(--text-black);
 }
 
 .kpi-minimal-item .num-desc {
-  font-size: 0.78rem;
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
   color: var(--text-muted);
   margin-top: 0.35rem;
   display: block;
@@ -678,19 +681,19 @@ img {
 .canva-pipeline-tabs {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.45rem;
-  margin-bottom: 0.85rem;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
 }
 
 .canva-pipe-btn {
-  padding: 0.65rem 0.5rem;
+  padding: 0.55rem 0.45rem;
   border: 1px solid var(--border-light);
   background: var(--bg-soft);
-  font-size: 0.72rem;
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem);
   font-weight: 700;
   text-align: left;
   transition: all 0.2s ease;
-  min-height: 42px;
+  min-height: 38px;
 }
 
 .canva-pipe-btn.active {
@@ -701,57 +704,57 @@ img {
 
 .canva-pipe-box {
   background: var(--bg-soft);
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 1.25rem;
   border-left: 3px solid var(--accent-bronze);
 }
 
 .canva-pipe-box h4 {
-  font-size: 0.92rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.92rem);
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .canva-pipe-box p {
-  font-size: 0.86rem;
+  font-size: clamp(0.78rem, 1.1vw, 0.86rem);
   color: var(--text-body);
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   SLIDE 4: EXPERIENCE & LEADERSHIP
+   SLIDE 4: EXPERIENCE & LEADERSHIP (3 ARCHITECTURAL COLUMNS)
    ========================================================================== */
 .exp-canva-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .exp-canva-col {
   background: var(--bg-white);
   border-top: 3px solid var(--text-black);
-  padding: 2.25rem 1.85rem;
+  padding: 2rem 1.5rem;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1rem;
 }
 
 .exp-col-num {
   font-family: var(--font-condensed);
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
   color: var(--accent-bronze);
   line-height: 1;
 }
 
 .exp-col-role {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
   font-weight: 700;
   color: var(--text-black);
   line-height: 1.25;
 }
 
 .exp-col-org {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -762,14 +765,14 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  font-size: 0.86rem;
+  gap: 0.65rem;
+  font-size: clamp(0.78rem, 1.1vw, 0.86rem);
   color: var(--text-body);
   line-height: 1.6;
 }
 
 .exp-col-points li {
-  padding-left: 1rem;
+  padding-left: 0.85rem;
   position: relative;
 }
 
@@ -787,33 +790,33 @@ img {
 .skills-canva-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 3rem;
+  gap: 1.15rem;
+  margin-bottom: 2.5rem;
 }
 
 .skill-canva-card {
   border: 1px solid var(--border-light);
-  padding: 1.6rem;
+  padding: 1.4rem;
   background: var(--bg-white);
 }
 
 .skill-canva-card h3 {
   font-family: var(--font-condensed);
-  font-size: 1.35rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
   text-transform: uppercase;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   color: var(--text-black);
 }
 
 .skill-tag-wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .skill-tag-wrap span {
-  font-size: 0.76rem;
-  padding: 0.3rem 0.65rem;
+  font-size: 0.74rem;
+  padding: 0.25rem 0.55rem;
   background: var(--bg-soft);
   color: var(--text-body);
   font-weight: 500;
@@ -822,31 +825,32 @@ img {
 .contact-canva-bar {
   background: var(--bg-dark-panel);
   color: var(--bg-white);
-  padding: 3.25rem 3.5rem;
+  padding: 2.75rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .contact-links-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .contact-canva-btn {
-  padding: 0.85rem 1.35rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-height: 46px;
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .contact-canva-btn:hover {
@@ -975,47 +979,15 @@ img {
 }
 
 /* ==========================================================================
-   MOBILE & TABLET RESPONSIVENESS (PHONE-FIRST OPTIMIZATIONS)
+   CLEAN ADAPTIVE SCALING (PRESERVING THE DESKTOP COMPOSITION ON MOBILE)
    ========================================================================== */
-
-/* Tablet & Smaller Laptops */
-@media (max-width: 1080px) {
-  .hero-slide {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .hero-right-rail {
-    display: none;
-  }
-  .hero-left {
-    padding: 5.5rem 2.5rem 3rem 3.5rem;
-  }
-  .hero-cv-column {
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--border-light);
-    padding: 3rem 2.5rem;
-  }
-  .portfolio-slide {
-    padding: 4.5rem 2.5rem;
-  }
-  .project-canva-panel {
-    grid-template-columns: 1fr;
-  }
-  .exp-canva-grid,
-  .skills-canva-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Smartphone / Mobile Phone (< 768px, specifically 360px - 480px) */
 @media (max-width: 768px) {
-  /* Compact Floating Header */
+  /* Minimal Top Nav becomes a clean top bar */
   .minimal-top-nav {
-    top: 12px;
-    left: 12px;
-    right: 12px;
-    padding: 0.45rem 0.95rem;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 0.35rem 0.85rem;
     justify-content: space-between;
     gap: 0.5rem;
   }
@@ -1023,202 +995,55 @@ img {
     display: none;
   }
   .minimal-top-nav a.nav-brand-pill {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
   }
   .minimal-top-nav a.nav-cv-pill {
-    font-size: 0.74rem;
-    padding: 0.35rem 0.8rem;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.75rem;
   }
 
-  /* Hero Section on Phone */
+  /* Left Area */
   .hero-left {
-    padding: 5.25rem 1.25rem 2.25rem 1.25rem;
-  }
-  .title-with-asterisk {
-    position: relative;
-    padding-left: 2rem;
+    padding: 4.25rem 0.75rem 2rem 1.75rem;
   }
   .bronze-asterisk {
-    font-size: 2.4rem;
-    left: 0;
-    top: -0.1rem;
-  }
-  .giant-condensed-title {
-    font-size: clamp(2.9rem, 13vw, 4.2rem);
-    line-height: 0.94;
-    letter-spacing: 0;
-  }
-  .hero-description {
-    margin-top: 1.5rem;
-    font-size: 0.92rem;
-    line-height: 1.65;
-  }
-  .hero-cta-row {
-    margin-top: 1.75rem;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.85rem;
-  }
-  .btn-canva-primary {
-    width: 100%;
-    justify-content: center;
-    padding: 0.95rem 1.25rem;
-    font-size: 0.92rem;
-  }
-  .link-read-more {
-    width: 100%;
-    justify-content: center;
-  }
-  .hero-bottom-role {
-    padding-top: 1.75rem;
-    font-size: 0.8rem;
-    border-top: 1px solid var(--border-light);
-    margin-top: 1rem;
+    left: -1.45rem;
+    top: 0.1rem;
+    font-size: 2.2rem;
   }
 
-  /* CV Showcase on Phone */
+  /* Center CV Column */
   .hero-cv-column {
-    padding: 2.25rem 1.25rem;
-  }
-  .cv-col-header {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-  .cv-paper-frame {
-    max-height: 48vh;
-    min-height: 290px;
+    padding: 3.75rem 0.65rem 1.5rem 0.65rem;
   }
   .cv-col-footer {
     grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-  .btn-cv-download-solid,
-  .btn-cv-zoom-outline {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: 0.84rem;
+    gap: 0.4rem;
   }
 
-  /* Slide Sections on Phone */
-  .portfolio-slide {
-    padding: 3.5rem 1.25rem;
-  }
-  .slide-header-grid {
-    margin-bottom: 2rem;
-    gap: 1rem;
-  }
-  .slide-title-wrap {
-    padding-left: 1.5rem;
-  }
-  .slide-asterisk {
-    font-size: 1.8rem;
-    left: 0;
-    top: 0;
-  }
-  .slide-condensed-title {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-  }
-  .slide-subtitle {
-    font-size: 0.86rem;
-  }
-
-  /* Filter Tabs — Horizontal Swipe on Phone */
-  .canva-filter-row {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    gap: 0.45rem;
-  }
-  .canva-filter-btn {
-    flex-shrink: 0;
-    padding: 0.45rem 0.85rem;
-    font-size: 0.74rem;
-  }
-
-  /* Awards Grid on Phone */
-  .certificates-canva-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  /* Projects on Phone */
-  .projects-canva-stack {
-    gap: 2rem;
-  }
-  .project-left-head {
-    padding: 1.75rem 1.25rem;
-  }
-  .project-panel-title {
-    font-size: 1.85rem;
-  }
-  .project-right-body {
-    padding: 1.75rem 1.25rem;
-    gap: 1.5rem;
-  }
-  .kpi-minimal-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding-bottom: 1.25rem;
-  }
-  .kpi-minimal-item {
-    border-bottom: 1px dashed var(--border-light);
-    padding-bottom: 0.75rem;
-  }
-  .kpi-minimal-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .kpi-minimal-item .big-num {
-    font-size: 2rem;
-  }
-
-  /* Pipeline Tabs — Horizontal Swipe on Phone */
+  /* Awards & Projects on smaller viewports */
   .canva-pipeline-tabs {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    gap: 0.45rem;
-    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
   }
   .canva-pipe-btn {
     flex-shrink: 0;
-    min-width: 130px;
-    white-space: nowrap;
+    min-width: 120px;
   }
-  .canva-pipe-box {
-    padding: 1rem 1.15rem;
-  }
-
-  /* Experience on Phone */
   .exp-canva-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
   }
-  .exp-canva-col {
-    padding: 1.75rem 1.25rem;
-  }
-
-  /* Skills & Contact on Phone */
   .skills-canva-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
   .contact-canva-bar {
-    padding: 2.25rem 1.25rem;
+    padding: 2rem 1.25rem;
     flex-direction: column;
     align-items: stretch;
-    gap: 1.5rem;
-  }
-  .contact-links-row {
-    flex-direction: column;
-    gap: 0.65rem;
   }
   .contact-canva-btn {
     width: 100%;
-    text-align: center;
   }
 }
