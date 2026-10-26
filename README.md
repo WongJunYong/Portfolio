@@ -9,6 +9,4 @@ Personal portfolio, interactive project showcase, and official curriculum vitae 
 - **7× Capstone Showcase Certificates**: Interactive gallery and high-resolution lightbox for all 7 official Sunway Business School honors.
 
 ## Contact
-- **Email:** wongjunyong30@gmail.com
-- **Phone / WhatsApp:** +60 13-994 1188
 - **LinkedIn:** [linkedin.com/in/wongjunyong11](https://www.linkedin.com/in/wongjunyong11)
