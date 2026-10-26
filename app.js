@@ -1,14 +1,15 @@
 /* ==========================================================================
    WONG JUN YONG — ARCHITECTURAL CANVA PORTFOLIO CONTROLLER
+   Root and Subfolder Image Path Resilience
    ========================================================================== */
 
 const MAIN_RESUME = {
   title: 'Wong Jun Yong — Official Curriculum Vitae',
   sub: 'Business Analytics • AI, RAG & Intelligent Automation • Data Analytics & BI',
   filename: 'Wong_Jun_Yong_Resume.pdf',
-  pdfPath: './assets/resumes/Wong_Jun_Yong_Resume.pdf',
-  page1Img: './assets/resumes/Wong_Jun_Yong_Resume_page_1.png',
-  page2Img: './assets/resumes/Wong_Jun_Yong_Resume_page_2.png'
+  pdfPath: './Wong_Jun_Yong_Resume.pdf',
+  page1Img: './Wong_Jun_Yong_Resume_page_1.png',
+  page2Img: './Wong_Jun_Yong_Resume_page_2.png'
 };
 
 const FLOW_STEPS = [
@@ -40,8 +41,8 @@ const CERTIFICATES_DATA = [
     title: 'Champion — Capstone Showcase 2026',
     tag: '01 / Overall Champion',
     category: 'champion',
-    img: './assets/certificates/01_Champion_Capstone_Showcase_page_1.png',
-    pdf: './assets/certificates/01_Champion_Capstone_Showcase.pdf',
+    img: './01_Champion_Capstone_Showcase_page_1.png',
+    pdf: './01_Champion_Capstone_Showcase.pdf',
     isChampion: true
   },
   {
@@ -49,8 +50,8 @@ const CERTIFICATES_DATA = [
     title: 'AI Technology Excellence Award',
     tag: '02 / AI Engineering',
     category: 'ai',
-    img: './assets/certificates/02_AI_Technology_Excellence_Award_page_1.png',
-    pdf: './assets/certificates/02_AI_Technology_Excellence_Award.pdf',
+    img: './02_AI_Technology_Excellence_Award_page_1.png',
+    pdf: './02_AI_Technology_Excellence_Award.pdf',
     isChampion: false
   },
   {
@@ -58,8 +59,8 @@ const CERTIFICATES_DATA = [
     title: 'Excellence in Integrated AI Workflow Design',
     tag: '03 / AI Workflow Design',
     category: 'ai',
-    img: './assets/certificates/03_Excellence_In_Integrated_AI_Workflow_Design_page_1.png',
-    pdf: './assets/certificates/03_Excellence_In_Integrated_AI_Workflow_Design.pdf',
+    img: './03_Excellence_In_Integrated_AI_Workflow_Design_page_1.png',
+    pdf: './03_Excellence_In_Integrated_AI_Workflow_Design.pdf',
     isChampion: false
   },
   {
@@ -67,8 +68,8 @@ const CERTIFICATES_DATA = [
     title: 'Operational Advancement AI Award',
     tag: '04 / Operational AI',
     category: 'ai',
-    img: './assets/certificates/04_Operational_Advancement_AI_Award_page_1.png',
-    pdf: './assets/certificates/04_Operational_Advancement_AI_Award.pdf',
+    img: './04_Operational_Advancement_AI_Award_page_1.png',
+    pdf: './04_Operational_Advancement_AI_Award.pdf',
     isChampion: false
   },
   {
@@ -76,8 +77,8 @@ const CERTIFICATES_DATA = [
     title: 'Business Digital Transformation Award',
     tag: '05 / Digital Transformation',
     category: 'business',
-    img: './assets/certificates/05_Business_Digital_Transformation_Award_page_1.png',
-    pdf: './assets/certificates/05_Business_Digital_Transformation_Award.pdf',
+    img: './05_Business_Digital_Transformation_Award_page_1.png',
+    pdf: './05_Business_Digital_Transformation_Award.pdf',
     isChampion: false
   },
   {
@@ -85,8 +86,8 @@ const CERTIFICATES_DATA = [
     title: 'Business Excellence Award',
     tag: '06 / Business Excellence',
     category: 'business',
-    img: './assets/certificates/06_Business_Excellence_Award_page_1.png',
-    pdf: './assets/certificates/06_Business_Excellence_Award.pdf',
+    img: './06_Business_Excellence_Award_page_1.png',
+    pdf: './06_Business_Excellence_Award.pdf',
     isChampion: false
   },
   {
@@ -94,8 +95,8 @@ const CERTIFICATES_DATA = [
     title: 'Best Speaker Award',
     tag: '07 / Best Speaker',
     category: 'speaker',
-    img: './assets/certificates/07_Best_Speaker_Award_page_1.png',
-    pdf: './assets/certificates/07_Best_Speaker_Award.pdf',
+    img: './07_Best_Speaker_Award_page_1.png',
+    pdf: './07_Best_Speaker_Award.pdf',
     isChampion: false
   }
 ];
@@ -114,7 +115,14 @@ function setCvPage(pageNum) {
   currentCvPage = pageNum;
   const previewImg = document.getElementById('heroCvPreviewImg');
   if (previewImg) {
-    previewImg.src = currentCvPage === 1 ? MAIN_RESUME.page1Img : MAIN_RESUME.page2Img;
+    const targetSrc = currentCvPage === 1 ? MAIN_RESUME.page1Img : MAIN_RESUME.page2Img;
+    previewImg.src = targetSrc;
+    previewImg.onerror = function() {
+      if (!this.dataset.tried) {
+        this.dataset.tried = '1';
+        this.src = './assets/resumes/' + targetSrc.replace(/^\.\//, '');
+      }
+    };
   }
   document.querySelectorAll('.cv-tab-btn').forEach(btn => {
     btn.classList.toggle('active', Number(btn.dataset.page) === currentCvPage);
@@ -146,7 +154,7 @@ function renderAwardsGrid() {
     return `
       <article class="cert-canva-card ${cert.isChampion ? 'champion-card' : ''}" data-index="${idx}" tabindex="0" role="button">
         <div class="cert-img-box">
-          <img src="${cert.img}" alt="${cert.title}" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='${cert.img.replace(/^\.\//, '')}';}" />
+          <img src="${cert.img}" alt="${cert.title}" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='./assets/certificates/${cert.img.replace(/^\.\//, '')}';}" />
         </div>
         <span class="cert-tag">${cert.tag}</span>
         <h3 class="cert-name">${cert.title}</h3>
@@ -182,7 +190,7 @@ function openCertModal(index) {
   dlBtn.setAttribute('download', `${cert.title.replace(/[^a-z0-9]/gi, '_')}.pdf`);
   navGroup.style.display = 'inline-flex';
 
-  bodyEl.innerHTML = `<img src="${cert.img}" alt="${cert.title}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='${cert.img.replace(/^\.\//, '')}';}" />`;
+  bodyEl.innerHTML = `<img src="${cert.img}" alt="${cert.title}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='./assets/certificates/${cert.img.replace(/^\.\//, '')}';}" />`;
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -202,8 +210,8 @@ function openCvReaderModal() {
   navGroup.style.display = 'none';
 
   bodyEl.innerHTML = `
-    <img src="${MAIN_RESUME.page1Img}" alt="Wong Jun Yong Resume Page 1" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='${MAIN_RESUME.page1Img.replace(/^\.\//, '')}';}" />
-    <img src="${MAIN_RESUME.page2Img}" alt="Wong Jun Yong Resume Page 2" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='${MAIN_RESUME.page2Img.replace(/^\.\//, '')}';}" />
+    <img src="${MAIN_RESUME.page1Img}" alt="Wong Jun Yong Resume Page 1" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='./assets/resumes/${MAIN_RESUME.page1Img.replace(/^\.\//, '')}';}" />
+    <img src="${MAIN_RESUME.page2Img}" alt="Wong Jun Yong Resume Page 2" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='./assets/resumes/${MAIN_RESUME.page2Img.replace(/^\.\//, '')}';}" />
   `;
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';

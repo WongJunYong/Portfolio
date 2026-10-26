@@ -6,17 +6,17 @@
   <title>Wong Jun Yong | Personal Portfolio &amp; Resume</title>
   <meta name="description" content="Personal Portfolio &amp; Official Resume of Wong Jun Yong — Business Analytics Undergraduate | AI, RAG &amp; Intelligent Automation | Data Analytics &amp; BI." />
 
-  <!-- Open Graph / Social Media Preview Meta (For GitHub, WhatsApp, LinkedIn, Twitter) -->
+  <!-- Open Graph / Social Media Preview Meta (Works with root og-preview.png) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Wong Jun Yong | Personal Portfolio &amp; Resume" />
   <meta property="og:description" content="Business Analytics Undergraduate (Sunway University) | Creator of SmartOps AI (Sunway Capstone Champion 2026) | AI, RAG &amp; Intelligent Automation | Data Analytics &amp; BI." />
-  <meta property="og:image" content="./assets/og-preview.png" />
+  <meta property="og:image" content="./og-preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wong Jun Yong | Personal Portfolio &amp; Resume" />
   <meta name="twitter:description" content="Business Analytics Undergraduate (Sunway University) | AI, RAG &amp; Intelligent Automation | Data Analytics &amp; BI." />
-  <meta name="twitter:image" content="./assets/og-preview.png" />
+  <meta name="twitter:image" content="./og-preview.png" />
 
   <!-- Exact Typography Matching Reference Template: Anton (Ultra-Bold Condensed) + Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +37,7 @@
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills &amp; Contact</a>
-    <a href="./assets/resumes/Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="nav-cv-pill">⬇ Download CV</a>
+    <a href="./Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="nav-cv-pill">⬇ Download CV</a>
   </nav>
 
   <!-- ======================================================================
@@ -65,7 +65,7 @@
         </p>
 
         <div class="hero-cta-row">
-          <a href="./assets/resumes/Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="btn-canva-primary">
+          <a href="./Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="btn-canva-primary">
             <span>Download Resume</span>
             <span>→</span>
           </a>
@@ -93,12 +93,12 @@
 
       <div id="cvPaperShowcase" class="cv-paper-showcase" title="Click to open Full-Screen 2-Page Resume">
         <div class="cv-paper-frame">
-          <img id="heroCvPreviewImg" src="./assets/resumes/Wong_Jun_Yong_Resume_page_1.png" alt="Wong Jun Yong Resume Page 1" loading="eager" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='assets/resumes/Wong_Jun_Yong_Resume_page_1.png';}" />
+          <img id="heroCvPreviewImg" src="./Wong_Jun_Yong_Resume_page_1.png" alt="Wong Jun Yong Resume Page 1" loading="eager" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='./assets/resumes/Wong_Jun_Yong_Resume_page_1.png';}" />
         </div>
       </div>
 
       <div class="cv-col-footer">
-        <a href="./assets/resumes/Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="btn-cv-download-solid">
+        <a id="mainCvDownloadBtn" href="./Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="btn-cv-download-solid">
           <span>⬇ Download CV (PDF)</span>
         </a>
         <button id="openCvModalBtn" type="button" class="btn-cv-zoom-outline">
@@ -141,7 +141,7 @@
     </div>
 
     <div id="awardsGrid" class="certificates-canva-grid">
-      <!-- Populated by app.js -->
+      <!-- Populated dynamically by app.js -->
     </div>
   </section>
 
@@ -392,7 +392,7 @@
         <p style="font-size: 0.85rem; color: #A1A1AA; margin-top: 0.35rem;">Petaling Jaya, Selangor • +60 13-994 1188 • wongjunyong30@gmail.com</p>
       </div>
       <div class="contact-links-row">
-        <a href="./assets/resumes/Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="contact-canva-btn primary">⬇ Download Resume (PDF)</a>
+        <a href="./Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="contact-canva-btn primary">⬇ Download Resume (PDF)</a>
         <a href="https://wa.me/60139941188" target="_blank" rel="noopener" class="contact-canva-btn">💬 WhatsApp</a>
         <a href="https://www.linkedin.com/in/wongjunyong11" target="_blank" rel="noopener" class="contact-canva-btn">in LinkedIn ↗</a>
         <button id="copyEmailTile" type="button" class="contact-canva-btn">📋 Copy Email</button>
@@ -413,7 +413,7 @@
             <button id="modalPrevBtn" type="button" class="modal-btn">← Prev</button>
             <button id="modalNextBtn" type="button" class="modal-btn">Next →</button>
           </div>
-          <a id="modalDownloadBtn" href="./assets/resumes/Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="modal-btn download-accent">⬇ Download PDF</a>
+          <a id="modalDownloadBtn" href="./Wong_Jun_Yong_Resume.pdf" download="Wong_Jun_Yong_Resume.pdf" class="modal-btn download-accent">⬇ Download PDF</a>
           <button id="modalCloseBtn" type="button" class="modal-btn">✕ Close</button>
         </div>
       </div>
