@@ -149,6 +149,8 @@ function renderAwardsGrid() {
     currentCertFilter === 'all' ? true : c.category === currentCertFilter
   );
 
+  grid.dataset.filter = currentCertFilter;
+
   grid.innerHTML = list.map(cert => {
     const idx = CERTIFICATES_DATA.findIndex(x => x.id === cert.id);
     return `
@@ -156,8 +158,11 @@ function renderAwardsGrid() {
         <div class="cert-img-box">
           <img src="${cert.img}" alt="${cert.title}" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='./assets/certificates/${cert.img.replace(/^\.\//, '')}';}" />
         </div>
-        <span class="cert-tag">${cert.tag}</span>
-        <h3 class="cert-name">${cert.title}</h3>
+        <div class="cert-meta-box">
+          <span class="cert-tag">${cert.tag}</span>
+          <h3 class="cert-name">${cert.title}</h3>
+          ${cert.isChampion ? '<span class="cert-champion-sub">Sunway University Capstone Showcase (11 Aug 2026) — 1st Place Overall Winner. Tap to view or download PDF →</span>' : ''}
+        </div>
       </article>
     `;
   }).join('');
